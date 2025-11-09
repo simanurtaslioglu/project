@@ -1,0 +1,175 @@
+body {
+    font-family: 'Times New Roman', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    
+    height: 100%; 
+    width: 100%;
+    overflow: hidden; 
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #c0392b;
+    color: white;
+    padding: 20px 0;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    flex-shrink: 0;
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    margin: 0;
+}
+
+.card-slider-container {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 20px 0;
+}
+
+/* Swiper Kapsayıcısı */
+.card-slider-container {
+    flex-grow: 1; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    
+    /* Dikey padding'i küçültüyoruz. Bu, dikey kaydırmanın ana nedeni olabilir. */
+    padding: 5px 0; 
+}
+
+/* Swiper Kapsayıcısı */
+.swiper-container {
+    width: 90%;
+    max-width: 400px;
+    
+    /* YÜKSEKLİK HESABI: Kalan alanı doldurmak için esneklik verilmeli */
+    /* Header ve Footer'ın boyutunu yaklaşık olarak çıkarıyoruz. */
+    height: calc(100vh - 150px); 
+    max-height: 600px; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Gazete Kartı Stili */
+.newspaper-card {
+    /* ... mevcut stiller ... */
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    
+    /* Bu kural, kartın içine sığmayan herhangi bir içeriği (resim dahil) kart sınırlarında tutmaya yardımcı olur. */
+    overflow: hidden; 
+}
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8em;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.card-header .source {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.card-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: 2em;
+    color: #c0392b;
+    line-height: 1.2;
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.card-headline.last-headline {
+    color: #333;
+    border-bottom: 3px double #333;
+    padding-bottom: 5px;
+}
+
+.card-image {
+    width: 100%; /* Resmin yatayda ait olduğu alanı tam kaplamasını sağlar */
+    height: auto; 
+    max-height: 300px; /* Kartın yüksekliğini sınırlıyoruz */
+    
+    display: block; 
+    
+    /* GÖRSELİN ALANA SIĞDIRILMASI VE KESİLME NOKTASI */
+    object-fit: cover; 
+    
+    /* YENİ KURAL: Resmin kesilme noktasını belirliyoruz. */
+    /* Resmin üst (top) kısmını odak noktası yapar. Eğer resim dikeyde kesiliyorsa, üst kısmı görünür kalır. */
+    object-position: top center; 
+    
+    /* ... Diğer stiller ... */
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card-excerpt {
+    font-size: 1em;
+    text-align: justify;
+    flex-grow: 1; /* İçeriğin kart yüksekliğini doldurmasını sağlar */
+}
+
+/* Swiper Navigasyon Stilleri */
+.swiper-button-next, .swiper-button-prev {
+    color: #c0392b !important;
+    transform: scale(0.8);
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #c0392b !important;
+}
+
+footer {
+    padding: 5px;
+    background-color: #333;
+    color: #ddd;
+    width: 100%;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+/* ======================================================= */
+/* 7. MOBİL UYUM (500px altı ekranlar) */
+/* ======================================================= */
+@media (max-width: 500px) {
+    .swiper-container {
+        /* Mobil görünümde yüksekliği view port'a göre ayarlıyoruz. 
+           (Header/Footer için 10vh çıkarıldı) */
+        height: 85vh; 
+        max-height: none; 
+    }
+    .card-headline {
+        font-size: 1.6em;
+    }
+    .card-slider-container {
+        padding: 5px 0;
+    }
+}
+/* Swiper'ın "This is the last slide" gibi mesajlarını gizle */
+.swiper-notification {
+    display: none !important;
+    visibility: hidden !important;
+}
