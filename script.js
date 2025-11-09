@@ -4,7 +4,7 @@ const ataturkTimelineData = [
         title: "MUSTAFA DÜNYAYA GELDİ",
         source: "SELÂNİK POSTASI",
         excerpt: "Osmanlı İmparatorluğu'nun Selanik şehrinde Ali Rıza Efendi ve Zübeyde Hanım'ın oğlu olarak doğdu. Tarihi değiştirecek liderin ilk adımı.",
-        image: "1.jpeg"
+        image: "X.jpeg"
     },
     {
         year: 1893,
@@ -231,3 +231,4 @@ var swiper = new Swiper(".myCardSwiper", {
     loop: false,
 
 });
+
